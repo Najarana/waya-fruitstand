@@ -12,6 +12,9 @@ public class Main {
 
         fruitStandScenario = new FruitStandScenario();
         fruitStandScenario.extension2();
+
+        fruitStandScenario = new FruitStandScenario();
+        fruitStandScenario.extension3();
     }
 
     private void base() {

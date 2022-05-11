@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -8,10 +9,11 @@ public class FruitStandReceipt {
     private final Map<String, Number> boughtFruits;
     private final int total;
 
-    public FruitStandReceipt(int fruitStandNumber, String fruitStandName, Set<FruitBasket> fruitBaskets, int total) {
+    public FruitStandReceipt(int fruitStandNumber, String fruitStandName, List<FruitBasket> fruitBaskets, int total) {
         this.fruitStandNumber = fruitStandNumber;
         this.fruitStandName = fruitStandName;
-        this.boughtFruits = fruitBaskets.stream().collect(Collectors.toMap(fruitBasket -> fruitBasket.getFruitType().toString(), FruitBasket::getPrice));
+        this.boughtFruits = fruitBaskets.stream()
+            .collect(Collectors.toMap(fruitBasket -> fruitBasket.getFruitType().toString(), FruitBasket::getPrice));
         this.total = total;
     }
 
